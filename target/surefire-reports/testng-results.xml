@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="2" passed="2">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Suite" duration-ms="9591" started-at="2017-07-26T12:57:46Z" finished-at="2017-07-26T12:57:55Z">
+    <groups>
+    </groups>
+    <test name="Test" duration-ms="9591" started-at="2017-07-26T12:57:46Z" finished-at="2017-07-26T12:57:55Z">
+      <class name="com.masReport.MailSend.NewTest">
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:com.masReport.MailSend.NewTest@90f6bfd]" name="beforeTest" is-config="true" duration-ms="7495" started-at="2017-07-26T18:27:46Z" finished-at="2017-07-26T18:27:53Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeTest -->
+        <test-method status="PASS" signature="f()[pri:0, instance:com.masReport.MailSend.NewTest@90f6bfd]" name="f" duration-ms="16" started-at="2017-07-26T18:27:53Z" finished-at="2017-07-26T18:27:53Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- f -->
+        <test-method status="PASS" signature="report()[pri:0, instance:com.masReport.MailSend.NewTest@90f6bfd]" name="report" duration-ms="820" started-at="2017-07-26T18:27:53Z" finished-at="2017-07-26T18:27:54Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- report -->
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.masReport.MailSend.NewTest@90f6bfd]" name="afterMethod" is-config="true" duration-ms="1238" started-at="2017-07-26T18:27:54Z" finished-at="2017-07-26T18:27:55Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+      </class> <!-- com.masReport.MailSend.NewTest -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
+</testng-results>
