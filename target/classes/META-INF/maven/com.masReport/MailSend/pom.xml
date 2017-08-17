@@ -95,7 +95,7 @@
 					<from>mlabsautoreports@gmail.com</from>
 					
 					<!--  Email subject -->
-					<subject>Test Automation Report</subject>
+					<subject>Luxury Daily Sanity Automation Report</subject>
 					
 					<!-- Fail the build if the mail doesnt reach -->
 					<failonerror>true</failonerror>
@@ -115,20 +115,46 @@
 					<receivers>
 						<!-- To Email address -->
 						<receiver>akash.kansal@timesgroup.com</receiver>
+						<receiver>aashish.dhaundiyal@timesgroup.com</receiver>
+						<receiver>Ankur.Tyagi@timesgroup.com</receiver>
 					</receivers>
 					
 					<fileSets>
 					<fileSet>
 						<!-- Report directory Path -->
-						<directory>D://Workspace//MailSend//Reports</directory>
+						<directory>D://Workspace//MBFramework//target//surefire-reports</directory>
 						<includes>
-							<!-- Report file name -->
-							<include>TestReport.html</include>
+							<!-- Report file name-->
+							<!-- <include>resources/css/**/*.*</include>
+							<include>resources/images/**/*.*</include> -->
+							<include>SeleniumTestReport.html</include>
 						</includes>
 						<!-- Use Regular Expressions like **/*.html if you want all the html files to send-->
 						</fileSet>
+						<fileSet>
+						<!-- Report directory Path -->
+						<directory>D://Workspace//MBFramework</directory>
+						<includes>
+							<!-- Report file name-->
+							<include>Report.png</include>
+						</includes>
+						<!-- Use Regular Expressions like **/*.html if you want all the html files to send-->
+						</fileSet>
+					</fileSets>	
+								
+		<htmlMessageFile>D://Workspace//MBFramework//target//surefire-reports//SeleniumTestReport.html</htmlMessageFile>
+					<!-- <fileSets>
+					<fileSet>
+						Report directory Path
+						<directory>D://Workspace//MailSend//Reports</directory>
+						<includes>
+							Report file name
+							<include>TestReport.html</include>
+						</includes>
+						Use Regular Expressions like **/*.html if you want all the html files to send
+						</fileSet>
 					</fileSets>				
-		<htmlMessageFile>D://Workspace//MailSend//Reports//TestReport.html</htmlMessageFile>
+		<htmlMessageFile>D://Workspace//MailSend//Reports//TestReport.html</htmlMessageFile> -->
 				
 				</configuration>
 				</execution>

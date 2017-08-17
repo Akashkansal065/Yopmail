@@ -30,7 +30,7 @@ public class NewTest {
 	{
 		report=new ExtentReports("./Reports/TestReport.html");
 		logger=report.startTest("report", "Basic testing");
-		logger.log(LogStatus.INFO,"Test Started");
+		logger.log(LogStatus.INFO,"Test Started First");
 		
 		String element=driver.getCurrentUrl();
 		String URL=element;
