@@ -2,8 +2,24 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Suite">
 <test name="Test">
+<parameter name="URL" value="https://www.google.com"/>
 <classes>
 <class name="com.masReport.MailSend.NewTest"></class>
 </classes>
 </test>
+
+<!-- <test name="Test1">
+<parameter name="URL" value="https://www.google.com"/>
+<classes>
+<class name="com.masReport.MailSend.NewTest"></class>
+</classes>
+</test> -->
+
+<!-- <test name="Test2">
+<parameter name="URL" value="https://www.google.com"/>
+<classes>
+<class name="com.masReport.MailSend.NewTest"></class>
+</classes>
+</test> -->
+
 </suite>

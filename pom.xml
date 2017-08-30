@@ -117,6 +117,9 @@
 						<receiver>akash.kansal@timesgroup.com</receiver>
 						<receiver>aashish.dhaundiyal@timesgroup.com</receiver>
 						<receiver>Ankur.Tyagi@timesgroup.com</receiver>
+						<receiver>Ashish.Dixit@timesgroup.com</receiver>
+						<receiver>sneha.jaiswal1@timesgroup.com</receiver>
+						<receiver>Tanmay.Gupta@timesgroup.com</receiver>
 					</receivers>
 					
 					<fileSets>
@@ -128,15 +131,6 @@
 							<!-- <include>resources/css/**/*.*</include>
 							<include>resources/images/**/*.*</include> -->
 							<include>SeleniumTestReport.html</include>
-						</includes>
-						<!-- Use Regular Expressions like **/*.html if you want all the html files to send-->
-						</fileSet>
-						<fileSet>
-						<!-- Report directory Path -->
-						<directory>D://Workspace//MBFramework</directory>
-						<includes>
-							<!-- Report file name-->
-							<include>Report.png</include>
 						</includes>
 						<!-- Use Regular Expressions like **/*.html if you want all the html files to send-->
 						</fileSet>
