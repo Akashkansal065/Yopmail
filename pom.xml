@@ -21,6 +21,36 @@
       <version>3.8.1</version>
       <scope>test</scope>
     </dependency>
+    <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-server -->
+<dependency>
+    <groupId>org.seleniumhq.selenium</groupId>
+    <artifactId>selenium-server</artifactId>
+    <version>3.4.0</version>
+</dependency>
+
+    <dependency>
+    <groupId>com.sun.xml.bind</groupId>
+    <artifactId>jaxb-core</artifactId>
+    <version>2.2.8-b01</version>
+</dependency>
+<dependency>
+    <groupId>com.sun.xml.bind</groupId>
+    <artifactId>jaxb-impl</artifactId>
+    <version>2.2-promoted-b65</version>
+</dependency>
+<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-firefox-driver -->
+<dependency>
+    <groupId>org.seleniumhq.selenium</groupId>
+    <artifactId>selenium-firefox-driver</artifactId>
+    <version>2.53.1</version>
+</dependency>
+<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-ie-driver -->
+<dependency>
+    <groupId>org.seleniumhq.selenium</groupId>
+    <artifactId>selenium-ie-driver</artifactId>
+    <version>2.53.1</version>
+</dependency>
+    
     <!-- https://mvnrepository.com/artifact/org.testng/testng -->
 <dependency>
     <groupId>org.testng</groupId>
@@ -34,6 +64,13 @@
     <artifactId>selenium-chrome-driver</artifactId>
     <version>3.4.0</version>
 </dependency>
+<!-- https://mvnrepository.com/artifact/ru.yandex.qatools.ashot/ashot -->
+<dependency>
+    <groupId>ru.yandex.qatools.ashot</groupId>
+    <artifactId>ashot</artifactId>
+    <version>1.5.4</version>
+</dependency>
+
     <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
 <dependency>
     <groupId>org.seleniumhq.selenium</groupId>
@@ -74,86 +111,6 @@
         </configuration>
       </plugin>
 
-<!-- Post-Man plugin -->
-		 <plugin>
-			<groupId>ch.fortysix</groupId>
-			<artifactId>maven-postman-plugin</artifactId>
-			<version>0.1.6</version>
-			
-			<executions>
-				<execution>
-				
-				<id>Akash</id>
-				<phase>test</phase>
-				<goals>
-				<goal>send-mail</goal>
-				</goals>
-				<inherited>true</inherited>
-				
-				<configuration>
-					<!-- From Email address -->
-					<from>mlabsautoreports@gmail.com</from>
-					
-					<!--  Email subject -->
-					<subject>Luxury Daily Sanity Automation Report</subject>
-					
-					<!-- Fail the build if the mail doesnt reach -->
-					<failonerror>true</failonerror>
-					
-					<!-- host -->
-					<mailhost>smtp.gmail.com</mailhost>
-					
-					<!-- port of the host -->
-					<mailport>465</mailport>
-					<mailssl>true</mailssl>
-					<mailAltConfig>true</mailAltConfig>
-					
-					<!-- Email Authentication(USername and Password) -->
-					<mailuser>mlabsautoreports@gmail.com</mailuser>
-					<mailpassword>Mlabs123!@#</mailpassword>
-					
-					<receivers>
-						<!-- To Email address -->
-						<receiver>akash.kansal@timesgroup.com</receiver>
-						<receiver>aashish.dhaundiyal@timesgroup.com</receiver>
-						<receiver>Ankur.Tyagi@timesgroup.com</receiver>
-						<receiver>Ashish.Dixit@timesgroup.com</receiver>
-						<receiver>sneha.jaiswal1@timesgroup.com</receiver>
-						<receiver>Tanmay.Gupta@timesgroup.com</receiver>
-					</receivers>
-					
-					<fileSets>
-					<fileSet>
-						<!-- Report directory Path -->
-						<directory>D://Workspace//MBFramework//target//surefire-reports</directory>
-						<includes>
-							<!-- Report file name-->
-							<!-- <include>resources/css/**/*.*</include>
-							<include>resources/images/**/*.*</include> -->
-							<include>SeleniumTestReport.html</include>
-						</includes>
-						<!-- Use Regular Expressions like **/*.html if you want all the html files to send-->
-						</fileSet>
-					</fileSets>	
-								
-		<htmlMessageFile>D://Workspace//MBFramework//target//surefire-reports//SeleniumTestReport.html</htmlMessageFile>
-					<!-- <fileSets>
-					<fileSet>
-						Report directory Path
-						<directory>D://Workspace//MailSend//Reports</directory>
-						<includes>
-							Report file name
-							<include>TestReport.html</include>
-						</includes>
-						Use Regular Expressions like **/*.html if you want all the html files to send
-						</fileSet>
-					</fileSets>				
-		<htmlMessageFile>D://Workspace//MailSend//Reports//TestReport.html</htmlMessageFile> -->
-				
-				</configuration>
-				</execution>
-			</executions>
-		</plugin>
 		</plugins>
   </build>
 </project>

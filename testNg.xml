@@ -1,25 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Suite">
-<test name="Test">
+<suite name="Suite" parallel="methods" verbose="1" thread-count="5">
+
+
+<listeners>
+        <listener class-name="com.selenium.ReportAnalyzer.RetryListener"/>
+        <listener class-name="com.selenium.ReportAnalyzer.TestCountReset"></listener>
+</listeners>
+
+<!--
+<test name="Test1">
 <parameter name="URL" value="https://www.google.com"/>
-<classes>
-<class name="com.masReport.MailSend.NewTest"></class>
+<parameter name="browserType" value="chrome"></parameter>
+ <groups>
+<run>
+<include name="a"></include>
+</run>
+</groups> -->
+
+<!-- <classes>
+<class name="com.masReport.MailSend.SampleTest"></class>
+<class name="com.masReport.MailSend.Sample2Test"></class>
 </classes>
+</test> -->
+
+<!-- <test name="Test">
+<parameter name="URL" value="https://www.google.com"/>
+<parameter name="browserType" value="chrome"></parameter>
+<classes>
+<class name="com.masReport.MailSend.Sample2Test"></class>
+</classes>
+</test> -->
+<parameter name="deviceName" value="Apple iPhone 6"></parameter>
+<parameter name="browserType" value="chrome"></parameter>
+<parameter name="browserType" value="chrome"></parameter>
+<parameter name="browserType" value="chrome"></parameter>
+
+<test name="Test2">
+<parameter name="URL" value="https://www.magicbricks.com/homeloan"/>
+<parameter name="browserType" value="iphonesize"></parameter>
+<classes>
+<class name="com.masReport.MailSend.SampleTest"></class>
+</classes> 
 </test>
 
-<!-- <test name="Test1">
-<parameter name="URL" value="https://www.google.com"/>
-<classes>
-<class name="com.masReport.MailSend.NewTest"></class>
-</classes>
-</test> -->
-
-<!-- <test name="Test2">
-<parameter name="URL" value="https://www.google.com"/>
-<classes>
-<class name="com.masReport.MailSend.NewTest"></class>
-</classes>
-</test> -->
 
 </suite>
