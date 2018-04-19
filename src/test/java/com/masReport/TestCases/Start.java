@@ -108,6 +108,7 @@ public abstract class Start {
 		//report.flush();
 		//send.mail(Constant.to, Constant.cc, Constant.username, Constant.password, Constant.filename);
 		ExtentManager.getInstance().close();
+		ExtentManager.flush();
 		send.mail(Constant.to, Constant.cc, Constant.username, Constant.password, Constant.filename);
 	}
 

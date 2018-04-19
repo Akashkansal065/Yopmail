@@ -14,43 +14,43 @@ public class ExtentManager {
 	public static Date date = new Date();
 	public static String filename="ExtentReport"+date.toString().replace(':','_').replace(' ','_')+".html";
 	public static String reportPath= "./Reports/extent_reports/"+ (date.getMonth()+1) +"/"+date.getDate()+"/"+filename;
-	
-	
+
+
 	public static synchronized ExtentReports getInstance() {
 		if (instance == null) {
 			//System.out.println(System.getProperty("user.dir"));
-//			instance = new ExtentReports("./Reports/TestReport.html");
+			//			instance = new ExtentReports("./Reports/TestReport.html");
 			instance = new ExtentReports(reportPath);
 		}
-		
+
 		return instance;
 	}
-	
-public static void flush(){
-		
-		//extent1.flush();
+
+	public static void flush(){
+
+		//instance.flush();
 		File source = new File(reportPath);
-	    File dest = new File("./Reports/");
-	   // File fileToDelete = new File("./reports/*.html");
-	    File[] fileToDelete = dest.listFiles(new FilenameFilter() {
-	        public boolean accept(File dir, String name) {
-	            return name.toLowerCase().endsWith(".html");
-	        }
-	    }); 
-	    
-	    for(File f:fileToDelete){
-	    		f.delete();
-			
-	    }
-	    
-	    
-	    try {
-	        FileUtils.copyFileToDirectory(source, dest);
-	    } catch (IOException e) {
-	        e.printStackTrace();
-	    }
-		
+		File dest = new File("./Reports/");
+		// File fileToDelete = new File("./reports/*.html");
+		File[] fileToDelete = dest.listFiles(new FilenameFilter() {
+			public boolean accept(File dir, String name) {
+				return name.toLowerCase().endsWith(".html");
+			}
+		}); 
+
+		for(File f:fileToDelete){
+			f.delete();
+
+		}
+
+
+		try {
+			FileUtils.copyFileToDirectory(source, dest);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
 	}
-	
-	
+
+
 }
