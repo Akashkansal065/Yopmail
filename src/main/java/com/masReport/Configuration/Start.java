@@ -1,4 +1,4 @@
-package com.masReport.TestCases;
+package com.masReport.Configuration;
 
 import java.io.IOException;
 import java.lang.reflect.Method;
@@ -14,17 +14,11 @@ import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
-import com.masReport.Configuration.Constant;
-import com.masReport.Configuration.Driver;
-import com.masReport.Configuration.ExtentManager;
-import com.masReport.Configuration.ExtentTestManager;
-import com.masReport.Configuration.ScreenShots;
-import com.masReport.Configuration.SendMail;
 import com.relevantcodes.extentreports.LogStatus;
 
 public abstract class Start {
 	
-	WebDriver driver;
+	protected WebDriver driver;
 	Date date=new Date();
 	SoftAssert softassert = new SoftAssert();
 	SendMail send =new SendMail();
