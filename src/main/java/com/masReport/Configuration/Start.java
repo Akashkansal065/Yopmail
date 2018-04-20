@@ -5,6 +5,7 @@ import java.lang.reflect.Method;
 import java.util.Date;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.os.WindowsUtils;
 import org.testng.ITestContext;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
@@ -102,6 +103,7 @@ public abstract class Start {
 		ExtentManager.getInstance().close();
 		ExtentManager.flush();
 		send.mail(Constant.to, Constant.cc, Constant.username, Constant.password, Constant.filename);
+		//WindowsUtils.killByName("chrome.exe");
 	}
 
 }

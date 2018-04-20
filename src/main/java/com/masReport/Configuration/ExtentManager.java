@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.util.Date;
 
 import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.os.WindowsUtils;
 
 import com.relevantcodes.extentreports.ExtentReports;
 
@@ -45,6 +46,7 @@ public class ExtentManager {
 
 
 		try {
+			
 			FileUtils.copyFileToDirectory(source, dest);
 		} catch (IOException e) {
 			e.printStackTrace();
