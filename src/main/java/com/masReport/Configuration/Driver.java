@@ -16,11 +16,11 @@ public class Driver {
 		return driver.get((int) (long) Thread.currentThread().getId());		
 	}
 
-	public synchronized static WebDriver setDriver(ITestContext context) {
+	public synchronized static void setDriver(ITestContext context) {
 		WebDriver driveme = BrowserSelection.browserType(context);
 		driveme.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		driver.put((int) (long) Thread.currentThread().getId(),driveme);
-		return driveme;
+//		return driveme;
 	}
 	
 	public synchronized static void TheEnd()

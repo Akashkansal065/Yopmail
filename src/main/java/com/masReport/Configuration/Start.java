@@ -4,8 +4,6 @@ import java.io.IOException;
 import java.lang.reflect.Method;
 import java.util.Date;
 
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.os.WindowsUtils;
 import org.testng.ITestContext;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
@@ -19,7 +17,6 @@ import com.relevantcodes.extentreports.LogStatus;
 
 public abstract class Start {
 
-	protected WebDriver driver;
 	Date date=new Date();
 	SoftAssert softassert = new SoftAssert();
 	SendMail send =new SendMail();
@@ -44,9 +41,10 @@ public abstract class Start {
 	@Parameters({"URL"})
 	public void beforeMethod(String url,Method method,ITestContext itcontext) {
 
-		Driver.setDriver(itcontext).get(url);			//Setting up driver for First Time Creating Thread id
-		driver=Driver.getDriver();						//Fetching the created Thread Id.
-
+		Driver.setDriver(itcontext);//.get(url);			//Setting up driver for First Time Creating Thread id
+		//WebDriver driver=Driver.getDriver();						//Fetching the created Thread Id.
+	
+		//driver.get(url);
 
 		Test test = method.getAnnotation(Test.class);	/*Getting all Annotaion Data of TestCases in Java Class*/
 		if(test==null)
@@ -60,7 +58,16 @@ public abstract class Start {
 
 		ExtentTestManager.getTest().assignCategory(itcontext.getName());
 
-		driver.manage().window().maximize();
+		//		driver.manage().window().maximize();
+		Base b = new Base();
+		if(url.equals(null) || url.equals(""))
+		{
+			System.out.println("No URL to OPEN");
+		}
+		else
+		{
+			b.openUrl(url);
+		}
 	}
 
 	@SuppressWarnings("deprecation")
@@ -102,8 +109,7 @@ public abstract class Start {
 		//send.mail(Constant.to, Constant.cc, Constant.username, Constant.password, Constant.filename);
 		ExtentManager.getInstance().close();
 		ExtentManager.flush();
-		send.mail(Constant.to, Constant.cc, Constant.username, Constant.password, Constant.filename);
+		//send.mail(Constant.to, Constant.cc, Constant.username, Constant.password, Constant.filename);
 		//WindowsUtils.killByName("chrome.exe");
 	}
-
 }

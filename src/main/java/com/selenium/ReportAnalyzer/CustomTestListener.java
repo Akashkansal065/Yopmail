@@ -6,9 +6,12 @@ import org.testng.ITestListener;
 import org.testng.ITestNGMethod;
 import org.testng.ITestResult;
 
-public class TestCountReset implements ITestListener {
+public class CustomTestListener implements ITestListener {
+	
+	
     public void  onFinish(ITestContext context) {
-		Set<ITestResult> failedTests = context.getFailedTests().getAllResults();
+		
+    	Set<ITestResult> failedTests = context.getFailedTests().getAllResults();
 		for (ITestResult temp : failedTests) {
 			ITestNGMethod method = temp.getMethod();
 			if (context.getFailedTests().getResults(method).size() > 1) {

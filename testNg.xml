@@ -5,7 +5,7 @@
 
 <listeners>
         <listener class-name="com.selenium.ReportAnalyzer.RetryListener"/>
-        <listener class-name="com.selenium.ReportAnalyzer.TestCountReset"></listener>
+        <listener class-name="com.selenium.ReportAnalyzer.CustomTestListener"></listener>
 </listeners>
 
 <!--

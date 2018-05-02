@@ -6,9 +6,10 @@ import java.io.IOException;
 import java.util.Date;
 
 import org.apache.commons.io.FileUtils;
-import org.openqa.selenium.os.WindowsUtils;
 
+import com.relevantcodes.extentreports.DisplayOrder;
 import com.relevantcodes.extentreports.ExtentReports;
+import com.relevantcodes.extentreports.NetworkMode;
 
 public class ExtentManager {
 	private static ExtentReports instance;
@@ -21,7 +22,8 @@ public class ExtentManager {
 		if (instance == null) {
 			//System.out.println(System.getProperty("user.dir"));
 			//			instance = new ExtentReports("./Reports/TestReport.html");
-			instance = new ExtentReports(reportPath);
+			instance = new ExtentReports(reportPath,true,DisplayOrder.OLDEST_FIRST,NetworkMode.ONLINE);
+			//			instance.loadConfig(new File(System.getProperty("user.dir")+"\\Enter the Config file name"));
 		}
 
 		return instance;
@@ -32,7 +34,6 @@ public class ExtentManager {
 		//instance.flush();
 		File source = new File(reportPath);
 		File dest = new File("./Reports/");
-		// File fileToDelete = new File("./reports/*.html");
 		File[] fileToDelete = dest.listFiles(new FilenameFilter() {
 			public boolean accept(File dir, String name) {
 				return name.toLowerCase().endsWith(".html");
